@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 import {
@@ -45,6 +44,7 @@ function App() {
 
   const openBubbleSurprise = () => {
     if (!popped) return;
+
     setSurpriseOpen(true);
     setPlaying(true);
   };
@@ -73,7 +73,6 @@ function App() {
 
   return (
     <div className="world">
-
       {/* =========================
           SKY DECOR
       ========================= */}
@@ -136,7 +135,6 @@ function App() {
       ========================= */}
 
       <header className="hero-world">
-
         <div className="hero-left">
           <p className="hero-eyebrow">{hero.eyebrow}</p>
 
@@ -158,9 +156,9 @@ function App() {
         </div>
 
         <div className="hero-center">
-
-          <div className={`bubble-scene ${popped ? "is-popped" : ""}`}>
-
+          <div
+            className={`bubble-scene ${popped ? "is-popped" : ""}`}
+          >
             <div className="bubble-shadow" />
 
             <button
@@ -192,7 +190,11 @@ function App() {
                       } as React.CSSProperties
                     }
                   >
-                    {index % 5 === 0 ? "♡" : index % 3 === 0 ? "✦" : ""}
+                    {index % 5 === 0
+                      ? "♡"
+                      : index % 3 === 0
+                      ? "✦"
+                      : ""}
                   </span>
                 ))}
               </div>
@@ -205,13 +207,32 @@ function App() {
                 aria-label="Open your little surprise"
               >
                 <svg viewBox="0 0 120 96" aria-hidden="true">
-                  <path className="surprise-shadow" d="M19 37h82v48H19z" />
-                  <path className="surprise-box" d="M15 31h90v54H15z" />
-                  <path className="surprise-lid" d="M11 22h98v19H11z" />
-                  <path className="surprise-ribbon" d="M56 22h9v63h-9z" />
-                  <path className="surprise-ribbon" d="M15 31h90v8H15z" />
-                  <path className="surprise-bow" d="M60 22c-18-20-32-5-20 3 6 4 13 0 20-3Zm0 0c18-20 32-5 20 3-6 4-13 0-20-3Z" />
+                  <path
+                    className="surprise-shadow"
+                    d="M19 37h82v48H19z"
+                  />
+                  <path
+                    className="surprise-box"
+                    d="M15 31h90v54H15z"
+                  />
+                  <path
+                    className="surprise-lid"
+                    d="M11 22h98v19H11z"
+                  />
+                  <path
+                    className="surprise-ribbon"
+                    d="M56 22h9v63h-9z"
+                  />
+                  <path
+                    className="surprise-ribbon"
+                    d="M15 31h90v8H15z"
+                  />
+                  <path
+                    className="surprise-bow"
+                    d="M60 22c-18-20-32-5-20 3 6 4 13 0 20-3Zm0 0c18-20 32-5 20 3-6 4-13 0-20-3Z"
+                  />
                 </svg>
+
                 <span>open me ♡</span>
               </button>
             )}
@@ -222,7 +243,6 @@ function App() {
                 <strong>for you</strong>
               </div>
             )}
-
           </div>
 
           <div className={`hero-reveal ${surpriseOpen ? "show" : ""}`}>
@@ -236,12 +256,12 @@ function App() {
 
             <p>{couple.intro}</p>
           </div>
-
         </div>
 
         <div className="hero-right">
           <div className="sun-note">
             <span>HEY!</span>
+
             <p>
               you found
               <br />
@@ -249,20 +269,22 @@ function App() {
               <br />
               surprise
             </p>
+
             <strong>✦</strong>
           </div>
         </div>
-
       </header>
 
       {/* =========================
-          SUNNY PATH
+          MAIN
       ========================= */}
 
       <main>
+        {/* =========================
+            SUNNY PATH
+        ========================= */}
 
         <section className="sunny-intro">
-
           <div className="path-arrow">↓</div>
 
           <p className="tiny-kicker">COME A LITTLE CLOSER</p>
@@ -278,7 +300,6 @@ function App() {
             <br />
             This little world is yours.
           </p>
-
         </section>
 
         {/* =========================
@@ -286,7 +307,6 @@ function App() {
         ========================= */}
 
         <section className="story-world">
-
           <div className="postcard">
             <div className="postcard-tape">♡</div>
 
@@ -303,8 +323,9 @@ function App() {
             </div>
 
             <div className="postcard-right">
-
-              <span className="postcard-label">POSTCARD FROM US</span>
+              <span className="postcard-label">
+                POSTCARD FROM US
+              </span>
 
               <h2>{story.title}</h2>
 
@@ -317,7 +338,6 @@ function App() {
                 read our little story
                 <span>→</span>
               </button>
-
             </div>
 
             <div className="postmark">
@@ -326,7 +346,6 @@ function App() {
               <small>FOREVER</small>
             </div>
           </div>
-
         </section>
 
         {/* =========================
@@ -334,7 +353,6 @@ function App() {
         ========================= */}
 
         <section className="reasons-world">
-
           <div className="garden-heading">
             <div className="garden-scribble">✿</div>
 
@@ -351,11 +369,12 @@ function App() {
           </p>
 
           <div className="flower-garden">
-
             {reasons.map((reason, index) => (
               <button
                 key={index}
-                className={`reason-flower flower-position-${index + 1} ${
+                className={`reason-flower flower-position-${
+                  index + 1
+                } ${
                   likedReason === index ? "bloomed" : ""
                 }`}
                 onClick={() => setLikedReason(index)}
@@ -387,9 +406,7 @@ function App() {
                 </span>
               </button>
             ))}
-
           </div>
-
         </section>
 
         {/* =========================
@@ -397,9 +414,7 @@ function App() {
         ========================= */}
 
         <section className="memory-world">
-
           <div className="memory-title">
-
             <div className="memory-label">
               <span>OUR</span>
               <strong>MEMORY</strong>
@@ -410,11 +425,9 @@ function App() {
               <p>THE LITTLE THINGS</p>
               <h2>we want to keep</h2>
             </div>
-
           </div>
 
           <div className="photo-wall">
-
             {memories.map((memory, index) => (
               <button
                 key={index}
@@ -447,9 +460,74 @@ function App() {
                 </span>
               </button>
             ))}
-
           </div>
+        </section>
 
+        {/* =========================
+            COUPLE VIDEO
+        ========================= */}
+
+        <section className="video-world">
+          <div className="video-sky">
+            <div className="video-cloud video-cloud-one">
+              <i />
+              <i />
+              <i />
+            </div>
+
+            <div className="video-cloud video-cloud-two">
+              <i />
+              <i />
+              <i />
+            </div>
+
+            <div className="video-sun">☀</div>
+
+            <div className="video-heading">
+              <span>ONE MORE LITTLE THING</span>
+
+              <h2>
+                A little video
+                <br />
+                <em>just for us.</em>
+              </h2>
+
+              <p>
+                Because some memories are better
+                <br />
+                when they move.
+              </p>
+            </div>
+
+            <div className="video-card">
+              <div className="video-sticker">
+                <span>♡</span>
+                <strong>PLAY</strong>
+              </div>
+
+              <div className="video-frame">
+                <video
+                  className="couple-video"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source
+                    src="/videos/couple-video.mp4"
+                    type="video/mp4"
+                  />
+
+                  Your browser does not support the video
+                  element.
+                </video>
+              </div>
+
+              <div className="video-caption">
+                <span>OUR LITTLE FILM</span>
+                <strong>Press play ♡</strong>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* =========================
@@ -457,10 +535,11 @@ function App() {
         ========================= */}
 
         <section className="letter-world">
-
           <div className="letter-intro">
             <span>WAIT...</span>
+
             <h2>I wrote you something.</h2>
+
             <p>
               It's a little cheesy.
               <br />
@@ -485,9 +564,7 @@ function App() {
             <div className="envelope-seal">
               ♡
             </div>
-
           </button>
-
         </section>
 
         {/* =========================
@@ -495,9 +572,7 @@ function App() {
         ========================= */}
 
         <section className="music-world">
-
           <div className="music-sky">
-
             <div className="music-cloud cloud-m1">
               <i />
               <i />
@@ -513,9 +588,7 @@ function App() {
             <div className="music-sun">☀</div>
 
             <div className="music-card">
-
               <div className="cassette">
-
                 <div className="cassette-label">
                   <span>OUR</span>
                   <strong>SONG</strong>
@@ -526,11 +599,9 @@ function App() {
                   <span />
                   <span />
                 </div>
-
               </div>
 
               <div className="music-card-info">
-
                 <span>THE SOUNDTRACK OF US</span>
 
                 <h2>{music.title}</h2>
@@ -543,11 +614,8 @@ function App() {
                 >
                   {playing ? "PAUSE ♡" : "PLAY ♡"}
                 </button>
-
               </div>
-
             </div>
-
           </div>
 
           {playing && (
@@ -559,7 +627,6 @@ function App() {
               aria-hidden="true"
             />
           )}
-
         </section>
 
         {/* =========================
@@ -567,7 +634,6 @@ function App() {
         ========================= */}
 
         <section className="final-world">
-
           <div className="final-sun">☀</div>
 
           <div className="final-bubble bubble-one">♡</div>
@@ -575,7 +641,6 @@ function App() {
           <div className="final-bubble bubble-three">♡</div>
 
           <div className="final-content">
-
             <span>AND BEFORE YOU GO...</span>
 
             <h2>
@@ -598,11 +663,8 @@ function App() {
             </div>
 
             <div className="tiny-heart">♡</div>
-
           </div>
-
         </section>
-
       </main>
 
       {/* =========================
@@ -610,7 +672,6 @@ function App() {
       ========================= */}
 
       <footer className="world-footer">
-
         <div className="footer-bubble">
           <span>♡</span>
         </div>
@@ -622,7 +683,6 @@ function App() {
         </p>
 
         <strong>✿</strong>
-
       </footer>
 
       {/* =========================
@@ -631,12 +691,10 @@ function App() {
 
       {popup === "story" && (
         <div className="overlay" onClick={closePopup}>
-
           <div
             className="story-modal"
             onClick={(event) => event.stopPropagation()}
           >
-
             <button
               className="modal-close"
               onClick={closePopup}
@@ -652,16 +710,16 @@ function App() {
 
             <h2>{story.title}</h2>
 
-            <div className="modal-line">♡ ───── ♡</div>
+            <div className="modal-line">
+              ♡ ───── ♡
+            </div>
 
             <p>{story.text}</p>
 
             <div className="modal-sign">
               {couple.name1} & {couple.name2}
             </div>
-
           </div>
-
         </div>
       )}
 
@@ -671,12 +729,10 @@ function App() {
 
       {popup === "letter" && (
         <div className="overlay" onClick={closePopup}>
-
           <div
             className="letter-modal"
             onClick={(event) => event.stopPropagation()}
           >
-
             <button
               className="modal-close"
               onClick={closePopup}
@@ -684,12 +740,13 @@ function App() {
               ×
             </button>
 
-            <span className="letter-top">FOR YOUR EYES ONLY ♡</span>
+            <span className="letter-top">
+              FOR YOUR EYES ONLY ♡
+            </span>
 
             <h2>{letter.title}</h2>
 
             <div className="letter-modal-content">
-
               <p className="letter-greeting">
                 {letter.greeting}
               </p>
@@ -706,11 +763,8 @@ function App() {
                 Love,
                 <strong>{couple.name1}</strong>
               </div>
-
             </div>
-
           </div>
-
         </div>
       )}
 
@@ -723,12 +777,10 @@ function App() {
           className="overlay photo-overlay"
           onClick={closePopup}
         >
-
           <div
             className="photo-modal"
             onClick={(event) => event.stopPropagation()}
           >
-
             <button
               className="modal-close"
               onClick={closePopup}
@@ -737,7 +789,6 @@ function App() {
             </button>
 
             <div className="big-photo">
-
               <img
                 src={memories[selectedPhoto].image}
                 alt={memories[selectedPhoto].caption}
@@ -746,17 +797,12 @@ function App() {
               <span>
                 {memories[selectedPhoto].caption}
               </span>
-
             </div>
-
           </div>
-
         </div>
       )}
-
     </div>
   );
 }
 
 export default App;
-
